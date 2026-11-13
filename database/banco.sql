@@ -1,8 +1,3 @@
--- ============================================================
--- Tourly — estrutura do banco de dados (MySQL 8)
--- Gerado a partir do diagrama de classes (docs/diagrama_classes.md)
--- ============================================================
-
 CREATE DATABASE IF NOT EXISTS tourly
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
