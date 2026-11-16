@@ -37,6 +37,8 @@ class Contato:
 
         if not self.mensagem:
             erros.append("A mensagem é obrigatória.")
+        elif len(self.mensagem) > 2000:
+            erros.append("A mensagem deve ter no máximo 2000 caracteres.")
 
         return erros
 

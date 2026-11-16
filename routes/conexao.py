@@ -1,11 +1,9 @@
 import mysql.connector
-
-from config import Config
+from routes.config import Config
 
 
 class Conexao:
-    """Responsável apenas por abrir a conexão com o banco de dados."""
-
+    """Abre conexões com o MySQL usando as configurações do projeto."""
     def __init__(self):
         self._parametros = {
             "host": Config.DB_HOST,
@@ -14,8 +12,8 @@ class Conexao:
             "password": Config.DB_PASSWORD,
             "database": Config.DB_NAME,
             "charset": "utf8mb4",
+            "connection_timeout": 5,
         }
 
     def conectar(self):
-        """Abre e devolve uma nova conexão. Quem chama deve fechá-la (con.close())."""
         return mysql.connector.connect(**self._parametros)
