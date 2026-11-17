@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Destinos — Tourly</title><meta name="description" content="Explore destinos brasileiros e encontre sua próxima viagem.">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css"><script src="../js/script.js" defer></script>
-</head>
-<body data-pagina="destinos" data-raiz="../">
-  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-  <header class="topo"><div class="container topo__in"><a class="logo" href="../index.html"><img src="../img/logo.svg" alt="Tourly" width="127" height="38"></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button><nav class="menu" id="menu" aria-label="Principal"><a href="../index.html" data-nav="home">Início</a><a href="destinos.html" data-nav="destinos">Destinos</a><a href="sobre.html" data-nav="sobre">Sobre</a><a href="contato.html" class="btn btn--coral btn--sm" data-nav="contato">Fale conosco</a></nav></div></header>
-  <main id="conteudo">
-    <section class="pagina-topo"><div class="container"><span class="selo">Descubra o Brasil</span><h1>Encontre seu próximo destino</h1><p>De praias paradisíacas a cidades cheias de charme: escolha o cenário da sua próxima história.</p></div><svg class="onda" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c120 40 240 50 360 30S600-10 780 10s330 70 660 20v70H0z" fill="#fff"/></svg></section>
-    <section class="secao"><div class="container"><div class="destinos-filtro"><label for="busca-destinos">Buscar por destino ou região</label><input id="busca-destinos" type="search" placeholder="Ex.: Rio de Janeiro, Nordeste..."></div><div class="grade grade--3" id="lista-destinos" aria-live="polite"></div></div></section>
-    <section class="secao secao--areia"><div class="container chamada"><div><h2>Já sabe para onde quer ir?</h2><p>Conte seus planos e vamos ajudar a transformar a ideia em roteiro.</p></div><a class="btn" href="contato.html">Planejar minha viagem</a></div></section>
-  </main>
-  <footer class="rodape"><div class="container"><div class="rodape__grade"><div><img src="../img/logo.svg" alt="Tourly" width="150" height="45"><p>Viagens que viram histórias. Planejamento com cuidado, transparência e inspiração.</p></div><div><h4>Navegue</h4><ul><li><a href="../index.html">Início</a></li><li><a href="destinos.html">Destinos</a></li><li><a href="sobre.html">Sobre nós</a></li><li><a href="contato.html">Contato</a></li></ul></div><div><h4>Atendimento</h4><ul><li>Segunda a sexta, 9h às 18h</li><li><a href="contato.html">Envie uma mensagem</a></li></ul></div></div><div class="rodape__base"><span>© <span data-ano>2026</span> Tourly. Projeto Integrado DWS + POO + BD — Colégio UNASP, 2º TI.</span><span class="status" id="status-api" role="status">Verificando conexão…</span></div></div></footer>
-</body></html>
+<html>
+<head><title>Tourly - Destinos</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+    
+<header>
+    <h1>Tourly</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/pages/destinos.html">Destinos</a>
+        <a href="/pages/reservas.html">Reservas</a>
+        <a href="/pages/contato.html">Contato</a>
+    </nav>
+</header>
+
+    <div class="container">
+        <h2>Nossos Destinos</h2>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'RJ')">Rio de Janeiro</button>
+            <button class="tab-button" onclick="openTab(event, 'SP')">São Paulo</button>
+            <button class="tab-button" onclick="openTab(event, 'RN')">Fernando de Noronha</button>
+        </div>
+        <div id="RJ" class="tab-content active"><h3>Rio de Janeiro</h3><p>Cristo Redentor, Pão de Açúcar, Praias maravilhosas.</p></div>
+        <div id="SP" class="tab-content"><h3>São Paulo</h3><p>A cidade que não para.</p></div>
+        <div id="RN" class="tab-content"><h3>Fernando de Noronha</h3><p>Um paraíso na Terra.</p></div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

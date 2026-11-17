@@ -1,110 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contato — Tourly</title>
-  <meta name="description" content="Fale com a Tourly e receba uma proposta de roteiro personalizada para a sua viagem.">
-  <meta name="theme-color" content="#0e9aa7">
-  <meta property="og:title" content="Contato — Tourly">
-  <meta property="og:description" content="Fale com a Tourly e receba uma proposta de roteiro personalizada para a sua viagem.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <script src="../js/script.js" defer></script>
-</head>
-<body data-pagina="contato" data-raiz="../">
-  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<html>
+<head><title>Tourly - Contato</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+    
+<header>
+    <h1>Tourly</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/pages/destinos.html">Destinos</a>
+        <a href="/pages/reservas.html">Reservas</a>
+        <a href="/pages/contato.html">Contato</a>
+    </nav>
+</header>
 
-  <header class="topo" id="topo">
-    <div class="container topo__in">
-      <a class="logo" href="../index.html" aria-label="Tourly — página inicial"><img src="../img/logo.svg" alt="Tourly" width="127" height="38"></a>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-      <nav class="menu" id="menu" aria-label="Principal">
-        <a href="../index.html" data-nav="home">Início</a>
-        <a href="destinos.html" data-nav="destinos">Destinos</a>
-        <a href="sobre.html" data-nav="sobre">Sobre</a>
-        <a href="contato.html" class="btn btn--coral btn--sm" data-nav="contato">Fale conosco</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="conteudo">
-    <section class="pagina-topo">
-      <div class="container">
-        <span class="selo">Fale conosco</span>
-        <h1>Contato</h1>
-        <p>Conte para onde você quer ir e a nossa equipe prepara uma proposta para você.</p>
-      </div>
-      <svg class="onda" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c120 40 240 50 360 30S600-10 780 10s330 70 660 20v70H0z" fill="#ffffff"/></svg>
-    </section>
-
-    <section class="secao" style="padding-top:1.5rem">
-      <div class="container contato-grid">
-        <div class="cartao reveal">
-          <h2>Envie uma mensagem</h2>
-          <form class="form" id="form-contato" novalidate>
-            <div class="campo">
-              <label for="nome">Nome</label>
-              <input id="nome" name="nome" type="text" maxlength="100" autocomplete="name" placeholder="Seu nome completo" required aria-describedby="erro-nome">
-              <p class="msg-erro" id="erro-nome"></p>
-            </div>
-            <div class="campo">
-              <label for="email">E-mail</label>
-              <input id="email" name="email" type="email" maxlength="150" autocomplete="email" placeholder="voce@exemplo.com" required aria-describedby="erro-email">
-              <p class="msg-erro" id="erro-email"></p>
-            </div>
-            <div class="campo">
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" maxlength="2000" placeholder="Qual destino você tem em mente? Quando pretende viajar?" required aria-describedby="erro-mensagem"></textarea>
-              <p class="msg-erro" id="erro-mensagem"></p>
-            </div>
-            <div class="alerta" id="aviso-contato" role="status" aria-live="polite" hidden></div>
-            <button class="btn btn--coral" type="submit">Enviar mensagem</button>
-          </form>
-        </div>
-        <aside class="info reveal" aria-label="Informações de atendimento">
-          <div class="cartao info__item"><div class="recurso__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>Horário de atendimento</h3><p>Segunda a sexta, das 9h às 18h.</p></div></div>
-          <div class="cartao info__item"><div class="recurso__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><h3>Resposta rápida</h3><p>Respondemos pelo e-mail que você informar em até 24 horas.</p></div></div>
-          <div class="cartao info__item"><div class="recurso__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.5"/></svg></div><div><h3>Roteiro personalizado</h3><p>Quanto mais detalhes você contar, melhor será a nossa proposta.</p></div></div>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="rodape">
     <div class="container">
-      <div class="rodape__grade">
-        <div>
-          <img src="../img/logo.svg" alt="Tourly" width="150" height="45">
-          <p>Agência de viagens que transforma o seu sonho de viajar em roteiros reais, seguros e cheios de histórias.</p>
-        </div>
-        <div>
-          <h4>Navegue</h4>
-          <ul>
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="destinos.html">Destinos</a></li>
-            <li><a href="sobre.html">Sobre nós</a></li>
-            <li><a href="contato.html">Contato</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Atendimento</h4>
-          <ul>
-            <li>Segunda a sexta, 9h às 18h</li>
-            <li>Resposta em até 24 horas</li>
-            <li><a href="contato.html">Envie uma mensagem</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="rodape__base">
-        <span>&copy; <span data-ano>2026</span> Tourly. Projeto Integrado DWS + POO + BD — Colégio UNASP, 2º TI.</span>
-        <span class="status" id="status-api" role="status" aria-live="polite">Verificando conexão…</span>
-      </div>
+        <h2>Fale Conosco</h2>
+        <form id="formContato">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu E-mail" required>
+            <textarea id="mensagem" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar Contato</button>
+        </form>
     </div>
-  </footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>

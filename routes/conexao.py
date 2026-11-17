@@ -1,19 +1,15 @@
-import mysql.connector
-from routes.config import Config
 
+import sqlite3
+def get_connection():
+    conn = sqlite3.connect('banco.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+    
+def init_db():
+    conn = get_connection()
+    conn.execute('''CREATE TABLE IF NOT EXISTS reservas (id INTEGER PRIMARY KEY AUTOINCREMENT, destino TEXT, data_viagem TEXT, nome_cliente TEXT)''')
+    conn.execute('''CREATE TABLE IF NOT EXISTS contatos (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, email TEXT, mensagem TEXT)''')
+    conn.commit()
+    conn.close()
 
-class Conexao:
-    """Abre conexões com o MySQL usando as configurações do projeto."""
-    def __init__(self):
-        self._parametros = {
-            "host": Config.DB_HOST,
-            "port": Config.DB_PORT,
-            "user": Config.DB_USER,
-            "password": Config.DB_PASSWORD,
-            "database": Config.DB_NAME,
-            "charset": "utf8mb4",
-            "connection_timeout": 5,
-        }
-
-    def conectar(self):
-        return mysql.connector.connect(**self._parametros)
+init_db()

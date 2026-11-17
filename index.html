@@ -1,147 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tourly — Agência de viagens</title>
-  <meta name="description" content="Tourly: destinos incríveis, roteiros sob medida e atendimento de verdade para a sua próxima viagem.">
-  <meta name="theme-color" content="#0e9aa7">
-  <meta property="og:title" content="Tourly — Agência de viagens">
-  <meta property="og:description" content="Tourly: destinos incríveis, roteiros sob medida e atendimento de verdade para a sua próxima viagem.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
-</head>
-<body data-pagina="home" data-raiz="">
-  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<html>
+<head><title>Tourly - Home</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+    
+<header>
+    <h1>Tourly</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/pages/destinos.html">Destinos</a>
+        <a href="/pages/reservas.html">Reservas</a>
+        <a href="/pages/contato.html">Contato</a>
+    </nav>
+</header>
 
-  <header class="topo" id="topo">
-    <div class="container topo__in">
-      <a class="logo" href="index.html" aria-label="Tourly — página inicial"><img src="img/logo.svg" alt="Tourly" width="127" height="38"></a>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-      <nav class="menu" id="menu" aria-label="Principal">
-        <a href="index.html" data-nav="home">Início</a>
-        <a href="pages/destinos.html" data-nav="destinos">Destinos</a>
-        <a href="pages/sobre.html" data-nav="sobre">Sobre</a>
-        <a href="pages/contato.html" class="btn btn--coral btn--sm" data-nav="contato">Fale conosco</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="conteudo">
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__texto">
-          <span class="selo">Agência de viagens</span>
-          <h1>Sua próxima viagem <span class="destaque">começa aqui</span></h1>
-          <p>Destinos incríveis, roteiros pensados em cada detalhe e um atendimento que cuida de você do embarque ao retorno.</p>
-          <form class="busca-hero" id="form-busca-hero" role="search">
-            <label class="sr-only" for="busca-hero">Para onde você quer ir?</label>
-            <input id="busca-hero" type="search" placeholder="Para onde você quer ir?" autocomplete="off">
-            <button class="btn btn--coral" type="submit">Buscar destinos</button>
-          </form>
-          <ul class="hero__tags" aria-label="Destinos populares">
-            <li><a href="pages/destinos.html?q=Rio">Rio de Janeiro</a></li>
-            <li><a href="pages/destinos.html?q=Gramado">Gramado</a></li>
-            <li><a href="pages/destinos.html?q=Noronha">Fernando de Noronha</a></li>
-            <li><a href="pages/destinos.html?q=Bonito">Bonito</a></li>
-          </ul>
-        </div>
-        <div class="hero__fotos" aria-hidden="true">
-          <img src="img/destinos/rio-de-janeiro.svg" alt="">
-          <img src="img/destinos/fernando-de-noronha.svg" alt="">
-          <img src="img/destinos/gramado.svg" alt="">
-        </div>
-      </div>
-      <svg class="onda" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c120 40 240 50 360 30S600-10 780 10s330 70 660 20v70H0z" fill="#ffffff"/></svg>
-    </section>
-
-    <section class="secao" id="destaques-secao">
-      <div class="container">
-        <div class="secao__cab reveal">
-          <span class="sobretitulo">Destinos em destaque</span>
-          <h2>Para onde vamos agora?</h2>
-          <p>Uma seleção de lugares que encantam quem viaja pela primeira vez e quem já perdeu a conta de quantas viagens fez.</p>
-        </div>
-        <div class="grade grade--3" id="destaques"></div>
-        <p style="text-align:center;margin-top:2.2rem"><a class="btn btn--turq" href="pages/destinos.html">Ver todos os destinos</a></p>
-      </div>
-    </section>
-
-    <section class="secao secao--areia">
-      <div class="container">
-        <div class="secao__cab reveal">
-          <span class="sobretitulo">Por que a Tourly</span>
-          <h2>Viajar sem preocupação</h2>
-          <p>Cuidamos de tudo para você só se preocupar em aproveitar.</p>
-        </div>
-        <div class="grade grade--4">
-          <div class="recurso reveal"><div class="recurso__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.5"/></svg></div><h3>Roteiros sob medida</h3><p>Montamos o roteiro de acordo com o seu estilo, tempo e orçamento.</p></div>
-          <div class="recurso reveal"><div class="recurso__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg></div><h3>Preço justo</h3><p>Transparência total: você sabe exatamente pelo que está pagando.</p></div>
-          <div class="recurso reveal"><div class="recurso__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-5H5a2 2 0 0 0-2 2z"/><path d="M18 17v1a3 3 0 0 1-3 3h-2"/></svg></div><h3>Suporte de verdade</h3><p>Equipe disponível antes, durante e depois da sua viagem.</p></div>
-          <div class="recurso reveal"><div class="recurso__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Viagem segura</h3><p>Parceiros verificados e orientação completa para cada destino.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="secao">
-      <div class="container">
-        <div class="secao__cab reveal">
-          <span class="sobretitulo">Como funciona</span>
-          <h2>Três passos até o embarque</h2>
-        </div>
-        <ol class="passos">
-          <li class="reveal"><h3>Escolha o destino</h3><p>Explore os destinos, conheça os pontos turísticos e encontre o lugar ideal.</p></li>
-          <li class="reveal"><h3>Fale com a gente</h3><p>Conte o que você procura e receba uma proposta de roteiro personalizada.</p></li>
-          <li class="reveal"><h3>Embarque tranquilo</h3><p>Com tudo organizado, é só arrumar a mala e curtir cada momento.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="secao" style="padding-top:0">
-      <div class="container">
-        <div class="chamada reveal">
-          <div><h2>Pronto para embarcar?</h2><p>Envie uma mensagem e comece a planejar a sua próxima aventura.</p></div>
-          <a class="btn" href="pages/contato.html">Falar com a Tourly</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="rodape">
     <div class="container">
-      <div class="rodape__grade">
-        <div>
-          <img src="img/logo.svg" alt="Tourly" width="150" height="45">
-          <p>Agência de viagens que transforma o seu sonho de viajar em roteiros reais, seguros e cheios de histórias.</p>
-        </div>
-        <div>
-          <h4>Navegue</h4>
-          <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="pages/destinos.html">Destinos</a></li>
-            <li><a href="pages/sobre.html">Sobre nós</a></li>
-            <li><a href="pages/contato.html">Contato</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Atendimento</h4>
-          <ul>
-            <li>Segunda a sexta, 9h às 18h</li>
-            <li>Resposta em até 24 horas</li>
-            <li><a href="pages/contato.html">Envie uma mensagem</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="rodape__base">
-        <span>&copy; <span data-ano>2026</span> Tourly. Projeto Integrado DWS + POO + BD — Colégio UNASP, 2º TI.</span>
-        <span class="status" id="status-api" role="status" aria-live="polite">Verificando conexão…</span>
-      </div>
+        <h2>Bem-vindo ao Tourly</h2>
+        <p>Sua melhor agência de viagens.</p>
     </div>
-  </footer>
 </body>
 </html>
