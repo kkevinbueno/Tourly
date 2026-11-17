@@ -1,21 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-header { background: #333; color: #fff; padding: 1rem; text-align: center; }
-nav a { color: white; margin: 0 10px; text-decoration: none; }
-.container { padding: 20px; max-width: 800px; margin: auto; background: white; border-radius: 8px; margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-input, textarea, button { padding: 10px; font-size: 1rem; }
-button { background: #28a745; color: white; border: none; cursor: pointer; }
-button:hover { background: #218838; }
+body { 
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f0fdf4; 
+    color: #1f2937; 
+}
 
-/* Tabs bug fix */
-.tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; padding-bottom: 10px;}
-.tab-button { padding: 10px 20px; cursor: pointer; border: 1px solid #ccc; background: #eee; border-radius: 4px; }
-.tab-button.active { background: #007bff; color: white; border-color: #007bff; }
-.tab-content { display: none; padding: 20px; border: 1px solid #ccc; border-radius: 4px; }
-.tab-content.active { display: block; }
+header { 
+    background: linear-gradient(135deg, #10b981, #047857); 
+    color: #fff; 
+    padding: 2rem 1rem; 
+    text-align: center; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+header h1 { 
+    margin: 0; 
+    font-size: 2.5rem; 
+    letter-spacing: 1px; 
+}
+
+nav { 
+    margin-top: 20px; 
+}
+
+nav a { 
+    color: white; 
+    margin: 0 10px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    padding: 8px 16px; 
+    border-radius: 20px; 
+    transition: background 0.3s ease; 
+}
+
+nav a:hover { 
+    background: rgba(255, 255, 255, 0.2); 
+}
+
+.container { 
+    padding: 30px; 
+    max-width: 900px; 
+    margin: -30px auto 40px auto; 
+    background: white; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+    position: relative;
+}
+
+/* Formulários */
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    margin-bottom: 20px; 
+}
+
+input, textarea { 
+    padding: 12px; 
+    font-size: 1rem; 
+    border: 1px solid #d1d5db; 
+    border-radius: 8px; 
+    font-family: 'Poppins', sans-serif; 
+    transition: all 0.3s; 
+}
+
+input:focus, textarea:focus { 
+    border-color: #10b981; 
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); 
+}
+
+button { 
+    background: #10b981; 
+    color: white; 
+    border: none; 
+    padding: 14px; 
+    border-radius: 8px; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: transform 0.2s, background 0.3s; 
+}
+
+button:hover { 
+    background: #059669; 
+    transform: translateY(-2px); 
+}
+
+/* Sistema de Abas (Tabs) */
+.tabs { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 25px; 
+    border-bottom: 2px solid #e5e7eb; 
+    padding-bottom: 5px; 
+    overflow-x: auto; 
+}
+
+.tab-button { 
+    background: transparent; 
+    color: #6b7280; 
+    padding: 10px 20px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    border: none; 
+    border-bottom: 3px solid transparent; 
+    border-radius: 0;
+    transition: all 0.3s; 
+}
+
+.tab-button:hover { 
+    color: #10b981; 
+    background: transparent;
+    transform: none;
+}
+
+.tab-button.active { 
+    color: #10b981; 
+    border-bottom: 3px solid #10b981; 
+}
+
+.tab-content { 
+    display: none; 
+    padding: 25px; 
+    background: #f9fafb; 
+    border-radius: 8px; 
+    border: 1px solid #e5e7eb; 
+    animation: fadeIn 0.4s ease-in-out; 
+}
+
+.tab-content.active { 
+    display: block; 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(5px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
 
 /* Lista de Reservas */
-.reserva-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #ccc; }
-.reserva-item button { background: #dc3545; padding: 5px 10px; }
-.reserva-item button:hover { background: #c82333; }
+.reserva-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px; 
+    background: #fff; 
+    border: 1px solid #e5e7eb; 
+    border-radius: 8px; 
+    margin-bottom: 12px; 
+    transition: transform 0.2s, border-color 0.2s; 
+}
+
+.reserva-item:hover { 
+    transform: scale(1.01); 
+    border-color: #10b981; 
+}
+
+.reserva-item button { 
+    background: #ef4444; 
+    padding: 8px 16px; 
+    font-size: 0.9rem; 
+    margin-left: 15px;
+}
+
+.reserva-item button:hover { 
+    background: #dc2626; 
+}
