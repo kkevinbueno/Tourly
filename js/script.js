@@ -1,29 +1,39 @@
 /* ===== Tourly — front-end (Fetch -> rotas Flask, com fallback de demonstração) ===== */
 
 const DESTINOS = [
-  { id: "rio", img: "rio.png", nome: "Rio de Janeiro", uf: "RJ", emoji: "🏖️", cor: "c1",
+  { id: "rio", img: "rio.png", foto: "Rio de Janeiro - Cristo Redentor 01.jpg", nome: "Rio de Janeiro", uf: "RJ", emoji: "🏖️", cor: "c1",
     desc: "Cristo Redentor, Pão de Açúcar e praias que fazem parte do cartão-postal do Brasil.",
     tags: ["Praia", "Cultura"], preco: "a partir de R$ 1.290" },
-  { id: "sp", img: "sao-paulo.png", nome: "São Paulo", uf: "SP", emoji: "🌆", cor: "c2",
+  { id: "sp", img: "sao-paulo.png", foto: "Cidade de São Paulo.jpg", nome: "São Paulo", uf: "SP", emoji: "🌆", cor: "c2",
     desc: "A cidade que não para: gastronomia de classe mundial, museus e vida noturna.",
     tags: ["Urbano", "Gastronomia"], preco: "a partir de R$ 890" },
-  { id: "noronha", img: "fernando-de-noronha.png", nome: "Fernando de Noronha", uf: "PE", emoji: "🐢", cor: "c3",
+  { id: "noronha", img: "fernando-de-noronha.png", foto: "FernandoDeNoronhaPraiaSancho.jpg", nome: "Fernando de Noronha", uf: "PE", emoji: "🐢", cor: "c3",
     desc: "Um paraíso na Terra: mergulho, tartarugas e o pôr do sol mais famoso do país.",
     tags: ["Ecoturismo", "Mergulho"], preco: "a partir de R$ 3.490" },
-  { id: "salvador", img: "salvador.png", nome: "Salvador", uf: "BA", emoji: "🥁", cor: "c4",
+  { id: "salvador", img: "salvador.png", foto: "Centro Histórico de Salvador Bahia Largo do Pelourinho 2019-6501.jpg", nome: "Salvador", uf: "BA", emoji: "🥁", cor: "c4",
     desc: "Pelourinho, axé, acarajé e uma cultura afro-brasileira vibrante.",
     tags: ["Cultura", "Praia"], preco: "a partir de R$ 1.150" },
-  { id: "foz", img: "foz-do-iguacu.png", nome: "Foz do Iguaçu", uf: "PR", emoji: "🌊", cor: "c5",
+  { id: "foz", img: "foz-do-iguacu.png", foto: "Parque Nacional do Iguaçú - Iguaçu National Park (14116137781).jpg", nome: "Foz do Iguaçu", uf: "PR", emoji: "🌊", cor: "c5",
     desc: "As Cataratas do Iguaçu, uma das sete maravilhas naturais do mundo.",
     tags: ["Natureza", "Aventura"], preco: "a partir de R$ 980" },
-  { id: "gramado", img: "gramado.png", nome: "Gramado", uf: "RS", emoji: "🏔️", cor: "c6",
+  { id: "gramado", img: "gramado.png", foto: "Lagonegro3.jpg", nome: "Gramado", uf: "RS", emoji: "🏔️", cor: "c6",
     desc: "Charme europeu na serra gaúcha, com chocolate quente e muito aconchego.",
     tags: ["Serra", "Romântico"], preco: "a partir de R$ 1.420" },
 ];
 
+
+/* ---------- fotos reais (Wikimedia Commons) ----------
+   Cada destino tem `foto` (arquivo no Commons) e `img` (PNG local, usado só como reserva
+   se a foto não carregar, ex.: sem internet). */
+const COMMONS = "https://commons.wikimedia.org/wiki/Special:FilePath/";
+const urlFoto = (arquivo, largura = 800) => COMMONS + encodeURIComponent(arquivo) + "?width=" + largura;
+const FOTO_ERRO = "this.onerror=null;this.src=this.dataset.fallback";
+const fotoBanner = "Fernando de Noronha Conceicao Beach.jpg";
+
 /* ---------- utilidades ---------- */
 const RAIZ = location.pathname.includes("/pages/") ? "../" : "./";
-const imgDestino = (nome) => (DESTINOS.find((d) => d.nome === nome) || DESTINOS[0]).img;
+const achaDestino = (nome) => DESTINOS.find((d) => d.nome === nome) || DESTINOS[0];
+const imgDestino = (nome) => achaDestino(nome).img;
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -154,7 +164,7 @@ if (destaques) {
 function cardDestino(d) {
   return `
   <article class="card-destino">
-    <div class="card-img"><img src="${RAIZ}png/${d.img}" alt="Ilustração de ${esc(d.nome)}" loading="lazy"><span class="uf">${esc(d.uf)}</span></div>
+    <div class="card-img ${d.cor}"><img src="${urlFoto(d.foto)}" data-fallback="${RAIZ}png/${d.img}" onerror="${FOTO_ERRO}" alt="Foto de ${esc(d.nome)}" loading="lazy" decoding="async"><span class="uf">${esc(d.uf)}</span></div>
     <div class="card-body">
       <div class="tags">${d.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
       <h3>${esc(d.nome)}</h3>
@@ -225,7 +235,7 @@ async function carregarReservas(forcar = false) {
   }
   listaReservas.innerHTML = reservas.map((r) => `
     <div class="reserva-item${r.id === editandoId ? " editando" : ""}">
-      <img class="thumb" src="${RAIZ}png/${imgDestino(r.destino)}" alt="">
+      <img class="thumb" src="${urlFoto(achaDestino(r.destino).foto, 160)}" data-fallback="${RAIZ}png/${imgDestino(r.destino)}" onerror="${FOTO_ERRO}" alt="">
       <div class="reserva-info"><strong>${esc(r.destino)}</strong><span>${esc(r.nome_cliente)}</span></div>
       <div class="reserva-data"><b>${esc(fmtData(r.data_viagem).slice(0, 5))}</b><small>${esc(fmtData(r.data_viagem).slice(6))}</small></div>
       <div class="acoes">
@@ -290,4 +300,14 @@ if (formReserva) {
   setInterval(() => { if (!document.hidden) carregarReservas(); }, 3000);
   window.addEventListener("storage", () => carregarReservas());
   document.addEventListener("visibilitychange", () => { if (!document.hidden) carregarReservas(); });
+}
+
+
+/* ---------- Contato: banner com foto real ---------- */
+const bannerContato = document.querySelector(".banner");
+if (bannerContato) {
+  bannerContato.dataset.fallback = bannerContato.getAttribute("src");
+  bannerContato.onerror = () => { bannerContato.onerror = null; bannerContato.src = bannerContato.dataset.fallback; };
+  bannerContato.src = urlFoto(fotoBanner, 900);
+  bannerContato.alt = "Praia da Conceição, em Fernando de Noronha";
 }
