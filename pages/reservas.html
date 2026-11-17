@@ -1,29 +1,50 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tourly - Reservas</title><link rel="stylesheet" href="../css/style.css"></head>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tourly · Reservas</title>
+<meta name="description" content="Tourly — sua agência de viagens pelo Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../png/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
 <body>
-    
 <header>
-    <h1>Tourly</h1>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="./destinos.html">Destinos</a>
-        <a href="./reservas.html">Reservas</a>
-        <a href="./contato.html">Contato</a>
-    </nav>
+  <a class="logo" href="../index.html"><img class="logo-img" src="../png/logo.png" alt="">Tourly</a>
+  <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../pages/destinos.html">Destinos</a>
+    <a href="../pages/reservas.html">Reservas</a>
+    <a href="../pages/contato.html">Contato</a>
+  </nav>
 </header>
 
-    <div class="container">
-        <h2>Fazer Reserva</h2>
-        <form id="formReserva">
-            <input type="text" id="nome_cliente" placeholder="Seu Nome" required>
-            <input type="text" id="destino" placeholder="Destino Desejado" required>
-            <input type="date" id="data_viagem" required>
-            <button type="submit">Agendar Reserva</button>
-        </form>
-        <h3>Minhas Reservas</h3>
-        <div id="listaReservas"></div>
-    </div>
-    <script src="../js/script.js"></script>
+<section class="page-hero"><h1>Reservas</h1><p>Agende sua viagem e acompanhe tudo em um só lugar.</p></section>
+<main class="container two-col">
+  <div class="panel">
+    <h2 id="tituloForm">Fazer reserva</h2>
+    <form id="formReserva">
+      <label>Seu nome<input type="text" id="nome_cliente" placeholder="Maria Silva" required></label>
+      <label>Destino<select id="destino" required></select></label>
+      <label>Data da viagem<input type="date" id="data_viagem" required></label>
+      <div class="btns"><button class="btn" id="btnSalvar" type="submit">Agendar reserva</button><button class="btn btn-sec" id="btnCancelar" type="button" hidden>Cancelar</button></div>
+    </form>
+  </div>
+  <div class="panel">
+    <h2>Minhas reservas <span class="count" id="contador">0</span><small class="live"><i></i>ao vivo</small></h2>
+    <div id="listaReservas"></div>
+  </div>
+</main>
+
+<footer>
+  <div><img class="logo-img" src="../png/logo.png" alt=""> <b>Tourly</b> · Sua melhor agência de viagens.</div>
+  <small>Projeto Integrado — DWS · POO · BD · 2º TI</small>
+</footer>
+<script src="../js/config.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>

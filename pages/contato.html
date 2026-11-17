@@ -1,27 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tourly - Contato</title><link rel="stylesheet" href="../css/style.css"></head>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tourly · Contato</title>
+<meta name="description" content="Tourly — sua agência de viagens pelo Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../png/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
 <body>
-    
 <header>
-    <h1>Tourly</h1>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="./destinos.html">Destinos</a>
-        <a href="./reservas.html">Reservas</a>
-        <a href="./contato.html">Contato</a>
-    </nav>
+  <a class="logo" href="../index.html"><img class="logo-img" src="../png/logo.png" alt="">Tourly</a>
+  <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../pages/destinos.html">Destinos</a>
+    <a href="../pages/reservas.html">Reservas</a>
+    <a href="../pages/contato.html">Contato</a>
+  </nav>
 </header>
 
-    <div class="container">
-        <h2>Fale Conosco</h2>
-        <form id="formContato">
-            <input type="text" id="nome" placeholder="Seu Nome" required>
-            <input type="email" id="email" placeholder="Seu E-mail" required>
-            <textarea id="mensagem" placeholder="Sua Mensagem" required></textarea>
-            <button type="submit">Enviar Contato</button>
-        </form>
-    </div>
-    <script src="../js/script.js"></script>
+<section class="page-hero"><h1>Fale Conosco</h1><p>Dúvidas, sugestões ou um roteiro sob medida? Escreva pra gente.</p></section>
+<main class="container narrow">
+  <div class="panel">
+    <img class="banner" src="../png/contato.png" alt="Ilustração de mapa com roteiro e envelope">
+    <form id="formContato">
+      <label>Nome<input type="text" id="nome" placeholder="Seu nome" required></label>
+      <label>E-mail<input type="email" id="email" placeholder="voce@email.com" required></label>
+      <label>Mensagem<textarea id="mensagem" rows="5" placeholder="Como podemos ajudar?" required></textarea></label>
+      <button class="btn" type="submit">Enviar mensagem</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div><img class="logo-img" src="../png/logo.png" alt=""> <b>Tourly</b> · Sua melhor agência de viagens.</div>
+  <small>Projeto Integrado — DWS · POO · BD · 2º TI</small>
+</footer>
+<script src="../js/config.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>

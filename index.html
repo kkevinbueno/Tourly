@@ -1,21 +1,63 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tourly - Home</title><link rel="stylesheet" href="./css/style.css"></head>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tourly · Home</title>
+<meta name="description" content="Tourly — sua agência de viagens pelo Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="png/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-    
 <header>
-    <h1>Tourly</h1>
-    <nav>
-        <a href="./index.html">Home</a>
-        <a href="./pages/destinos.html">Destinos</a>
-        <a href="./pages/reservas.html">Reservas</a>
-        <a href="./pages/contato.html">Contato</a>
-    </nav>
+  <a class="logo" href="index.html"><img class="logo-img" src="png/logo.png" alt="">Tourly</a>
+  <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pages/destinos.html">Destinos</a>
+    <a href="pages/reservas.html">Reservas</a>
+    <a href="pages/contato.html">Contato</a>
+  </nav>
 </header>
 
-    <div class="container">
-        <h2>Bem-vindo ao Tourly</h2>
-        <p>Sua melhor agência de viagens.</p>
+<section class="hero">
+  <div class="hero-in">
+    <span class="eyebrow">Viaje pelo Brasil</span>
+    <h1>O próximo destino da sua vida começa aqui.</h1>
+    <p>Pacotes, roteiros e reservas em poucos cliques. Escolha o destino, marque a data e deixe o resto com a gente.</p>
+    <div class="hero-cta">
+      <a class="btn" href="pages/reservas.html">Reservar agora</a>
+      <a class="btn btn-ghost" href="pages/destinos.html">Ver destinos</a>
     </div>
+    <ul class="stats">
+      <li><b>6</b><span>destinos</span></li>
+      <li><b>24h</b><span>suporte</span></li>
+      <li><b>100%</b><span>online</span></li>
+    </ul>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,0 720,48 C960,96 1200,110 1440,40 L1440,120 L0,120 Z"/></svg>
+</section>
+
+<main class="container">
+  <div class="section-head reveal"><span class="eyebrow dark">Em alta</span><h2>Destinos em destaque</h2>
+    <a href="pages/destinos.html" class="link">Ver todos →</a></div>
+  <div class="grid" id="destaques"></div>
+
+  <div class="steps reveal">
+    <div><img src="png/icone-escolha.png" alt=""><h4>Escolha</h4><p>Navegue pelos destinos e encontre o seu.</p></div>
+    <div><img src="png/icone-reserva.png" alt=""><h4>Reserve</h4><p>Informe nome e data da viagem.</p></div>
+    <div><img src="png/icone-viagem.png" alt=""><h4>Viaje</h4><p>Acompanhe e gerencie suas reservas.</p></div>
+  </div>
+</main>
+
+<footer>
+  <div><img class="logo-img" src="png/logo.png" alt=""> <b>Tourly</b> · Sua melhor agência de viagens.</div>
+  <small>Projeto Integrado — DWS · POO · BD · 2º TI</small>
+</footer>
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
